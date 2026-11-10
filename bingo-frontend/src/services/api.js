@@ -1,13 +1,16 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://nondualistically-ostensive-luella.ngrok-free.dev',
+  // Coloque o link do seu ngrok do backend aqui (sem a barra no final)
+  baseURL: 'https://nondualistically-ostensive-luella.ngrok-free.dev', 
   timeout: 10000,
+  headers: {
+    'ngrok-skip-browser-warning': 'true' // 🔥 Pula a tela de aviso do ngrok
+  }
 });
 
 api.interceptors.request.use(
   (config) => {
-    // 🔥 CORREÇÃO: Lendo exatamente a mesma chave que o App.jsx salva
     const token = localStorage.getItem('bingo_token');
     
     if (token && !config.url.includes('/login')) {
@@ -25,7 +28,6 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response && error.response.status === 401) {
-      // 🔥 CORREÇÃO: Removendo a mesma chave se o token expirar
       localStorage.removeItem('bingo_token');
       window.location.reload();
     }
