@@ -44,13 +44,15 @@
 
 ## 📌 Sobre o Projeto
 
-O **Bingo da Paróquia** nasceu da necessidade real de modernizar os tradicionais sorteios comunitários: elimina conferência manual, garante transparência e traz uma experiência digital premium para operadores e participantes.
+O Bingo da Paróquia é um sistema full-stack que desenvolvi e comercializei para a paróquia local. A demanda real era modernizar o tradicional bingo comunitário, que é a principal fonte de arrecadação para a manutenção da igreja, eliminando a confusão da conferência de papel.
 
-O grande diferencial é o **Radar de Aproximação**: um algoritmo que calcula em tempo real quais cartelas estão mais próximas de bater, exibindo tudo em barras de progresso visuais. Isso permite que o operador saiba *na hora* quem está "quente" — e os participantes podem conferir a própria cartela pela tela pública, sem precisar esperar o locutor.
+Porém, eu coloquei um "requisito pessoal" na arquitetura: eu queria muito que meus amigos, que moram longe, pudessem comprar cartelas e jogar com a gente. Para quebrar essa barreira geográfica, construí uma área pública de auditoria onde qualquer pessoa consegue acompanhar os acertos da sua cartela em tempo real pelo celular, não importando a distância.
 
-A interface usa **Glassmorphism** com paleta azul royal (`#051877`) e acento dourado (`#f1c40f`), remetendo à tradição litúrgica mas com polimento moderno.
+Para a mesa de operação, o grande diferencial que entreguei foi o Radar de Aproximação: um algoritmo que calcula os acertos simultaneamente e exibe em barras de progresso quem está prestes a bater. Assim, a organização sabe exatamente quem está "quente" na rodada antes mesmo da pessoa gritar bingo.
 
-> 🎯 **Objetivo**: substituir o "bingo de papel" por uma experiência digital confiável, bonita e 100% responsiva.
+Na interface, apliquei a técnica de Glassmorphism com uma paleta azul royal (#051877) e acentos em dourado (#f1c40f). O resultado respeita a tradição litúrgica da padroeira, mas com o polimento, a performance e a usabilidade de um software moderno.
+
+> 🎯 Objetivo: Entregar um sistema sob medida que resolve a gestão do evento, impulsiona a arrecadação da igreja e permite que pessoas de qualquer lugar participem do bingo com total transparência.
 
 ---
 
@@ -65,8 +67,6 @@ A interface usa **Glassmorphism** com paleta azul royal (`#051877`) e acento dou
 *— Cadastro → Sorteio ao vivo → Radar atualizando —*
 
 </div>
-
-> 💡 **Como criar o GIF**: use [LICEcap](https://www.cockos.com/licecap/) ou [Peek](https://github.com/phw/peek), grave 10–15s mostrando `Login → 3 pedras sorteadas → radar subindo → auditoria`, mantenha abaixo de **8MB** e otimize no [ezgif.com](https://ezgif.com/optimize) se necessário.
 
 ---
 
@@ -305,7 +305,6 @@ GET /public/cartela/42
 
 </div>
 
-> 💡 Para adicionar prints reais: tire screenshot, salve em `docs/`, e substitua os caminhos acima.
 
 ---
 
