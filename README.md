@@ -17,7 +17,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](#-licença)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](#-contribuindo)
 
-**[🚀 Demo ao Vivo](#-demonstração)** · **[📺 Vídeo Completo](#-vídeo-de-demonstração)** · **[🐛 Reportar Bug](../../issues)** · **[💡 Sugerir Feature](../../issues)**
+**[🚀 Demo ao Vivo](https://bingo.otaviano.dev.br/)** · **[📺 Vídeo Completo](#-vídeo-de-demonstração)** · **[🐛 Reportar Bug](../../issues)** · **[💡 Sugerir Feature](../../issues)**
 
 </div>
 
