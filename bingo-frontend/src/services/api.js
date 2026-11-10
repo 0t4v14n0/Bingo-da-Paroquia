@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://nondualistically-ostensive-luella.ngrok-free.dev/',
+  baseURL: 'https://nondualistically-ostensive-luella.ngrok-free.dev',
   timeout: 10000,
 });
 
