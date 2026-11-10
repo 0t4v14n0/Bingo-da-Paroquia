@@ -1,0 +1,47 @@
+# =========================
+# BACKEND (Spring Boot / Java)
+# =========================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+*.class
+*.log
+*.jar
+*.war
+
+# =========================
+# FRONTEND (Node.js / React / Vite)
+# =========================
+node_modules/
+dist/
+dist-ssr/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# VARIAVEIS DE AMBIENTE E SECRETS (Importante!)
+# =========================
+.env
+.env.*
+!.env.example
+application-local.properties
+application-dev.properties
+
+# =========================
+# ARQUIVOS DE IDEs (VS Code, IntelliJ, Eclipse)
+# =========================
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# =========================
+# ARQUIVOS DO SISTEMA OPERACIONAL
+# =========================
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db

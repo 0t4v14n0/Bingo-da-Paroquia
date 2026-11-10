@@ -1,0 +1,1367 @@
+/* ============================================
+   IMPORTAÇÃO DE FONTE
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ============================================
+   VARIÁVEIS — BASE #051877
+   ============================================ */
+:root {
+  --base: #051877;
+  --base-dark: #030f4a;
+  --base-darker: #020a33;
+  --base-light: #0a2a9e;
+  --base-lighter: #123ec4;
+  --accent: #f1c40f;
+  --accent-dark: #e0b034;
+  --accent-glow: rgba(241, 196, 15, 0.35);
+  --danger: #ef4444;
+  --success: #22c55e;
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --glass: rgba(5, 24, 119, 0.35);
+  --glass-strong: rgba(5, 24, 119, 0.55);
+  --border: rgba(255, 255, 255, 0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: radial-gradient(
+    circle at 50% 0%,
+    var(--base-light) 0%,
+    var(--base-dark) 45%,
+    var(--base-darker) 100%
+  );
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================
+   TELA DE LOGIN
+   ============================================ */
+.login-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: radial-gradient(
+    circle at 50% 30%,
+    var(--base) 0%,
+    var(--base-dark) 50%,
+    var(--base-darker) 100%
+  );
+}
+
+.login-card {
+  background: var(--glass-strong);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--accent-dark);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(5, 24, 119, 0.4);
+  text-align: center;
+}
+
+.padroeira-header {
+  margin-bottom: 28px;
+}
+
+.logo-padroeira {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent-dark);
+  margin-bottom: 15px;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.padroeira-header h2 {
+  font-size: 1.7rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.padroeira-header h3 {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 300;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-form-mb {
+  margin-bottom: 20px;
+}
+
+.divisor-login {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 20px 0;
+}
+
+.input-group {
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.input-group input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-entrar {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: var(--base-darker);
+  border: none;
+  padding: 15px;
+  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(241, 196, 15, 0.25);
+  margin-top: 6px;
+}
+
+.btn-entrar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(241, 196, 15, 0.45);
+}
+
+.btn-entrar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* BOTÃO PÚBLICO (AUDITORIA) */
+.btn-publico {
+  background: transparent;
+  border: 2px dashed rgba(241, 196, 15, 0.5);
+  color: var(--accent);
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-publico:hover {
+  background: rgba(241, 196, 15, 0.1);
+  border-style: solid;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   PAINEL PRINCIPAL
+   ============================================ */
+.app-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  padding: 20px 28px;
+  border-radius: var(--radius);
+  margin-bottom: 32px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+
+.header-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.header-brand h1 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.25;
+}
+
+.header-brand p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+.btn-sair {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ff8a80;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-sair:hover {
+  background: rgba(239, 68, 68, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   GRID DOS PAINÉIS
+   ============================================ */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.dashboard-card {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.card-header h2 {
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.badge {
+  background: var(--danger);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: pulse 1.6s infinite;
+}
+
+.badge-count {
+  background: var(--base-lighter);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   BANNER DE VENCEDOR
+   ============================================ */
+.vencedor-banner {
+  background: linear-gradient(
+    135deg,
+    rgba(241, 196, 15, 0.2) 0%,
+    rgba(5, 24, 119, 0.4) 100%
+  );
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  margin-bottom: 22px;
+  text-align: center;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.vencedor-banner h3 {
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.vencedor-banner p {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.vencedor-banner strong {
+  color: var(--accent);
+}
+
+.vencedor-banner small {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+.vencedor-banner-auditoria {
+  margin-top: 20px;
+}
+
+/* ============================================
+   FORM DE SORTEIO
+   ============================================ */
+.form-sorteio {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.premio-selector label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+.radio-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.radio-label {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.radio-label input {
+  display: none;
+}
+
+.radio-label span {
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: block;
+}
+
+.radio-label:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(241, 196, 15, 0.4);
+}
+
+.radio-label.active {
+  border-color: var(--accent);
+  background: rgba(241, 196, 15, 0.15);
+  color: var(--accent);
+  box-shadow: 0 0 16px rgba(241, 196, 15, 0.2);
+}
+
+.sorteio-action {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed rgba(241, 196, 15, 0.4);
+  flex-wrap: wrap;
+}
+
+.numero-grande-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.numero-grande-box label {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.input-sorteio {
+  width: 110px;
+  height: 88px;
+  background: var(--base-darker);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  box-shadow: inset 0 0 12px rgba(241, 196, 15, 0.15);
+  transition: all 0.3s ease;
+}
+
+.input-sorteio:focus {
+  box-shadow: inset 0 0 12px rgba(241, 196, 15, 0.3), 0 0 0 3px var(--accent-glow);
+}
+
+.input-sorteio:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input-sorteio::-webkit-outer-spin-button,
+.input-sorteio::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-sorteio[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.btn-sortear {
+  flex: 1;
+  min-width: 180px;
+  background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+  color: white;
+  border: none;
+  padding: 20px;
+  height: 88px;
+  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
+}
+
+.btn-sortear:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(34, 197, 94, 0.45);
+}
+
+.btn-sortear:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================
+   PEDRAS SORTEADAS
+   ============================================ */
+.sorteados-container {
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(241, 196, 15, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+
+.sorteados-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 140px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.sorteados-grid::-webkit-scrollbar {
+  width: 6px;
+}
+.sorteados-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(241, 196, 15, 0.5);
+  border-radius: 10px;
+}
+.sorteados-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bola-sorteada {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--base-light) 0%,
+    var(--base-darker) 100%
+  );
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  animation: popIn 0.3s ease-out forwards;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   RADAR / RANKING
+   ============================================ */
+.ranking-container {
+  margin-top: 24px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(241, 196, 15, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+}
+
+.ranking-title {
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.ranking-item {
+  margin-bottom: 14px;
+}
+.ranking-item:last-child {
+  margin-bottom: 0;
+}
+
+.ranking-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 0.88rem;
+  gap: 10px;
+}
+
+.ranking-nome {
+  font-weight: 600;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ranking-falta {
+  color: var(--accent);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.progress-bg {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.8s ease-in-out, background-color 0.3s;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================
+   FORM DE CADASTRO
+   ============================================ */
+.form-cadastro {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-group-cad {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group-cad label {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.input-group-cad input,
+.input-group-cad textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.input-group-cad input::placeholder,
+.input-group-cad textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.input-group-cad textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.input-group-cad input:focus,
+.input-group-cad textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-salvar {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: var(--base-darker);
+  border: none;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(255, 152, 0, 0.25);
+  margin-top: 4px;
+}
+
+.btn-salvar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 152, 0, 0.45);
+}
+
+/* ============================================
+   TELA DE AUDITORIA (PÚBLICA)
+   ============================================ */
+.header-auditoria {
+  position: relative;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header-brand-auditoria {
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.header-brand-auditoria .header-logo {
+  margin: 0 auto;
+}
+
+.header-brand-auditoria h1 {
+  font-size: 1.5rem;
+}
+
+.btn-voltar {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.card-auditoria {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-auditoria {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.input-busca {
+  flex: 1;
+  padding: 15px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 1.05rem;
+  outline: none;
+  transition: all 0.3s ease;
+  min-width: 0;
+}
+
+.input-busca::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.input-busca:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.input-busca::-webkit-outer-spin-button,
+.input-busca::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-busca[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.form-auditoria .btn-entrar {
+  margin-top: 0;
+  padding: 15px 26px;
+  white-space: nowrap;
+}
+
+.erro-msg {
+  color: #ff8a80;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  text-align: center;
+  font-size: 0.92rem;
+  margin-bottom: 20px;
+  animation: popIn 0.25s ease-out;
+}
+
+.auditoria-resultado {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.cartela-info {
+  text-align: center;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cartela-info h2 {
+  font-size: 1.35rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.cartela-info p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.cartela-info strong {
+  color: var(--text);
+}
+
+/* ABAS DE AUDITORIA */
+.abas-auditoria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.abas-auditoria button {
+  background: rgba(255, 255, 255, 0.04);
+  border: 2px solid var(--border);
+  color: var(--text);
+  padding: 12px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.abas-auditoria button:hover {
+  background: rgba(241, 196, 15, 0.08);
+  border-color: rgba(241, 196, 15, 0.4);
+}
+
+.abas-auditoria button.aba-ativa {
+  background: rgba(241, 196, 15, 0.18);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 16px rgba(241, 196, 15, 0.25);
+}
+
+/* ============================================
+   SEQUÊNCIA PÚBLICA DE SORTEIO
+   ============================================ */
+.sequencia-container {
+  margin-bottom: 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(241, 196, 15, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+
+.sequencia-title {
+  font-size: 0.92rem;
+  color: var(--accent);
+  margin-bottom: 14px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.sequencia-vazia {
+  opacity: 0.6;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.sequencia-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 4px 6px 4px 0;
+}
+
+.sequencia-grid::-webkit-scrollbar {
+  width: 6px;
+}
+.sequencia-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(241, 196, 15, 0.5);
+  border-radius: 10px;
+}
+.sequencia-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sequencia-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  min-width: 50px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
+
+.sequencia-item.na-cartela {
+  background: rgba(241, 196, 15, 0.15);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(241, 196, 15, 0.2);
+}
+
+.sequencia-ordem {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.sequencia-bola {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--base-light) 0%,
+    var(--base-darker) 100%
+  );
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.sequencia-item.na-cartela .sequencia-bola {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fde68a 0%,
+    var(--accent) 55%,
+    var(--accent-dark) 100%
+  );
+  color: var(--base-darker);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+}
+
+.sequencia-item.na-cartela .sequencia-ordem {
+  color: var(--accent);
+}
+
+/* ============================================
+   GRID DA CARTELA (BINGO CARD)
+   ============================================ */
+.grid-cartela {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(241, 196, 15, 0.25);
+  border-radius: var(--radius);
+}
+
+.bola-cartela {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.35s ease;
+}
+
+.bola-cartela.acertou {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fde68a 0%,
+    var(--accent) 55%,
+    var(--accent-dark) 100%
+  );
+  border-color: var(--accent);
+  color: var(--base-darker);
+  box-shadow: 0 0 16px rgba(241, 196, 15, 0.55),
+    inset 0 0 6px rgba(255, 255, 255, 0.4);
+  transform: scale(1.06);
+  animation: popIn 0.35s ease-out;
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 12px rgba(241, 196, 15, 0.2); }
+  50% { box-shadow: 0 0 24px rgba(241, 196, 15, 0.45); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .app-container {
+    padding: 24px 16px 48px;
+  }
+}
+
+/* Tablets / landscape */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 20px;
+    gap: 16px;
+  }
+
+  .header-brand {
+    gap: 14px;
+  }
+
+  .header-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .header-brand h1 {
+    font-size: 1.15rem;
+  }
+
+  .header-brand p {
+    font-size: 0.78rem;
+  }
+
+  .btn-sair {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .dashboard-card {
+    padding: 22px 18px;
+  }
+
+  .card-header h2 {
+    font-size: 1.15rem;
+  }
+
+  .sorteio-action {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .numero-grande-box {
+    align-items: center;
+  }
+
+  .input-sorteio {
+    width: 100%;
+    max-width: 160px;
+  }
+
+  .btn-sortear {
+    width: 100%;
+    height: 70px;
+    min-width: unset;
+  }
+
+  /* Auditoria */
+  .header-auditoria {
+    padding-top: 56px;
+  }
+
+  .btn-voltar {
+    top: 14px;
+    left: 14px;
+    transform: none;
+  }
+
+  .header-brand-auditoria h1 {
+    font-size: 1.25rem;
+  }
+
+  .form-auditoria {
+    flex-direction: column;
+  }
+
+  .form-auditoria .btn-entrar {
+    width: 100%;
+  }
+
+  .bola-cartela {
+    font-size: 0.95rem;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+    border-radius: 14px;
+  }
+
+  .logo-padroeira {
+    width: 100px;
+    height: 100px;
+  }
+
+  .padroeira-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .padroeira-header h3 {
+    font-size: 0.85rem;
+  }
+
+  .app-container {
+    padding: 16px 12px 40px;
+  }
+
+  .main-header {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .header-brand {
+    gap: 12px;
+  }
+
+  .header-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .header-brand h1 {
+    font-size: 1rem;
+  }
+
+  .header-brand p {
+    font-size: 0.72rem;
+  }
+
+  .dashboard-card {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .card-header {
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+
+  .card-header h2 {
+    font-size: 1.05rem;
+  }
+
+  .radio-group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .radio-label {
+    padding: 12px;
+  }
+
+  .radio-label span {
+    font-size: 0.9rem;
+  }
+
+  .sorteio-action {
+    padding: 16px 12px;
+  }
+
+  .input-sorteio {
+    height: 76px;
+    font-size: 2.2rem;
+  }
+
+  .btn-sortear {
+    height: 62px;
+    font-size: 0.95rem;
+    padding: 16px;
+  }
+
+  .bola-sorteada {
+    width: 32px;
+    height: 32px;
+    font-size: 0.82rem;
+  }
+
+  .sorteados-grid {
+    max-height: 120px;
+  }
+
+  .ranking-container,
+  .sorteados-container {
+    padding: 14px 12px;
+  }
+
+  .ranking-info {
+    font-size: 0.82rem;
+  }
+
+  .btn-salvar {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .vencedor-banner {
+    padding: 14px 10px;
+  }
+
+  .vencedor-banner h3 {
+    font-size: 0.9rem;
+  }
+
+  .vencedor-banner p {
+    font-size: 0.88rem;
+  }
+
+  /* Auditoria mobile */
+  .header-brand-auditoria h1 {
+    font-size: 1.1rem;
+  }
+
+  .header-brand-auditoria p {
+    font-size: 0.75rem;
+  }
+
+  .cartela-info h2 {
+    font-size: 1.15rem;
+  }
+
+  .cartela-info p {
+    font-size: 0.88rem;
+  }
+
+  .abas-auditoria {
+    gap: 6px;
+  }
+
+  .abas-auditoria button {
+    padding: 10px 4px;
+    font-size: 0.78rem;
+  }
+
+  .sequencia-container {
+    padding: 12px 10px;
+  }
+
+  .sequencia-title {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .sequencia-grid {
+    gap: 8px;
+    max-height: 220px;
+  }
+
+  .sequencia-item {
+    min-width: 44px;
+    padding: 5px 6px;
+  }
+
+  .sequencia-bola {
+    width: 28px;
+    height: 28px;
+    font-size: 0.78rem;
+  }
+
+  .sequencia-ordem {
+    font-size: 0.6rem;
+  }
+
+  .grid-cartela {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    padding: 12px;
+  }
+
+  .bola-cartela {
+    font-size: 0.8rem;
+    border-width: 1.5px;
+  }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 360px) {
+  .header-brand h1 {
+    font-size: 0.9rem;
+  }
+
+  .padroeira-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .input-sorteio {
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .bola-sorteada {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .sequencia-item {
+    min-width: 40px;
+    padding: 4px 5px;
+  }
+
+  .sequencia-bola {
+    width: 26px;
+    height: 26px;
+    font-size: 0.72rem;
+  }
+
+  .grid-cartela {
+    gap: 4px;
+    padding: 10px;
+  }
+
+  .bola-cartela {
+    font-size: 0.72rem;
+  }
+}
