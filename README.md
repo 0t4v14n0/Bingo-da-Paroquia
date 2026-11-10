@@ -64,12 +64,6 @@ A interface usa **Glassmorphism** com paleta azul royal (`#051877`) e acento dou
 
 *— Cadastro → Sorteio ao vivo → Radar atualizando —*
 
-### 🎥 Vídeo completo (3 min)
-
-[![Assista ao vídeo completo](https://img.youtube.com/vi/SEU_VIDEO_ID_AQUI/maxresdefault.jpg)](https://www.youtube.com/watch?v=SEU_VIDEO_ID_AQUI)
-
-*Clique na imagem para assistir no YouTube*
-
 </div>
 
 > 💡 **Como criar o GIF**: use [LICEcap](https://www.cockos.com/licecap/) ou [Peek](https://github.com/phw/peek), grave 10–15s mostrando `Login → 3 pedras sorteadas → radar subindo → auditoria`, mantenha abaixo de **8MB** e otimize no [ezgif.com](https://ezgif.com/optimize) se necessário.
@@ -164,11 +158,8 @@ bingo-paroquia/
 ├── backend/                    # 🍃 API Spring Boot
 │   ├── src/main/java/...
 │   │   ├── controller/         # Endpoints REST
-│   │   ├── service/            # Regras de negócio
-│   │   ├── repository/         # Spring Data JPA
-│   │   ├── model/              # Entidades (Cartela, Sorteio)
-│   │   ├── dto/                # AuditoriaDTO, RankingDTO
-│   │   └── security/           # JWT filter, CORS, UserDetails
+│   │   ├── domain/            # Regras de negócio
+│   │   └── infra/           # JWT filter, CORS, UserDetails
 │   ├── src/main/resources/
 │   │   └── application.properties
 │   └── pom.xml
@@ -330,13 +321,6 @@ GET /public/cartela/42
 | **Secrets** | Nunca comitadas — use variáveis de ambiente |
 | **SQL Injection** | Protegido pelo JPA/Hibernate |
 
-**⚠️ Antes de deploy em produção:**
-
-- [ ] Rotacione o `JWT_SECRET`
-- [ ] Configure HTTPS
-- [ ] Restrinja origens no CORS
-- [ ] Ative rate limiting no login
-
 ---
 
 ## 🗺️ Roadmap
@@ -394,9 +378,9 @@ Distribuído sob a **Licença MIT**. Veja [`LICENSE`](./LICENSE) para mais detal
 
 *Desenvolvedor Full-Stack · Entusiasta de boas UX e código limpo*
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/SEU_USUARIO/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SEU_USUARIO/)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:seu@email.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/otaviano-cruz/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/0t4v14n0)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](0t4v14n0@gmail.com)
 
 </div>
 
